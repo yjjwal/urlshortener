@@ -1,0 +1,35 @@
+{% extends "index.html" %} 
+{% block content %}
+<div class="container">
+  <div>
+    <h4>Dashboard</h4>
+    <h1>Convert long URL to short</h1>
+    <a href="{%url 'create_short_url'%}">Create New Short url</a>
+  <table border="2" cellpadding="5">
+    <tr>
+      <th>Original url</th>
+      <th>Short url</th>
+      <th>created_at</th>
+      <th>count</th>
+      <th>remove</th>
+    </tr>
+    {%for url in urls%}
+    <tr>
+      <td>{{url.original_url}}</td>
+      <td>
+        <a href="{% url 'redirect_short' url.short_code%}">{{url.short_code}}</a>
+      </td>
+      <td>{{url.created_at}}</td>
+      <td>{{url.clicks}}</td>
+      <td><a href="{%url 'delete' url.pk%}">delete</a></td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="2">No URLS Yet</td>
+    </tr>
+    {%endfor%}
+  </table >
+  <a href="{% url 'logout'%}">logout</a>
+  </div>
+</div>
+{% endblock %}

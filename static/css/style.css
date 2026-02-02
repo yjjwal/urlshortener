@@ -1,0 +1,20 @@
+body{
+    background: #ece5e5;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(242, 200, 207); 
+    margin: 100px auto;
+    width: 700px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+.helptext{
+    display: none;
+}
+form ul li{
+    display: none;
+} 

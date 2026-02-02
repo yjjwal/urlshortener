@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    <div>
+        <h1>well come to this website</h1>
+        <p>If you want to access this website you must do register first</p>
+        <h2>Registeration</h2>
+        <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">submit</button>
+        <a href="{% url 'login'%}">login</a>
+    </form>
+    </div>  
+</div>
+{% endblock  %}
