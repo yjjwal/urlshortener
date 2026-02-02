@@ -2,6 +2,13 @@
 {% block content %}
 <div class="container">
     <div>
+        {%if messages%}
+        {%for message in messages%}
+        <div class="alert {{message.tags}}">
+            {{message}}
+        </div>
+        {%endfor%}
+        {%endif%}
         <h1>well come to this website</h1>
         <p>If you want to access this website you must do register first</p>
         <h2>Registeration</h2>

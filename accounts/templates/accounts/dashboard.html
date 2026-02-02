@@ -2,6 +2,13 @@
 {% block content %}
 <div class="container">
   <div>
+    {%if messages%}
+        {%for message in messages%}
+        <div class="alert {{message.tags}}">
+            {{message}}
+        </div>
+        {%endfor%}
+        {%endif%}
     <h4>Dashboard</h4>
     <h1>Convert long URL to short</h1>
     <a href="{%url 'create_short_url'%}">Create New Short url</a>

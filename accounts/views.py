@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login,logout
 from urlshortner.middleware import auth,guest
 from shortner.models import ShortURL
+from django.contrib import messages
 
 # Create your views here.
 @guest
@@ -12,7 +13,11 @@ def register_views(request):
         if form.is_valid():
             user = form.save()
             login(request,user)
+            messages.success(request,"Successfully registored!!")
             return redirect('dashboard')
+        else:
+            messages.error(request,"Registration is Failed!!")
+
     else:
         form = UserCreationForm()
     return render(request,'accounts/register.html',{'form':form})
@@ -23,7 +28,11 @@ def login_views(request):
         if form.is_valid():
             user = form.get_user()
             login(request,user)
+            messages.success(request,"Successfully logedin!!")
             return redirect('dashboard')
+        else:
+            messages.error(request,"Login failed!!")
+
     else:
         form = AuthenticationForm()
     return render(request,'accounts/login.html',{'form':form})
