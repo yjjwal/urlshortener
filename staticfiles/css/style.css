@@ -19,7 +19,7 @@ body{
     display: none;
 }  */
 .alert.success{
-    background-color: #155724;
+    background-color: green;
     color: white;
     text-align: center;
 }
