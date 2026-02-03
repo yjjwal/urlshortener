@@ -1,0 +1,31 @@
+body{
+    background: #ece5e5;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(242, 200, 207); 
+    margin: 100px auto;
+    width: 700px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+.helptext{
+    display: none;
+}
+/* form ul li{
+    display: none;
+}  */
+.alert.success{
+    background-color: #d4edda;
+    color: #155724;
+    text-align: center;
+}
+.alert.error{
+    background-color:  #f16a76;
+    color:#721c24;
+    text-align: center;
+    
+}
