@@ -19,13 +19,13 @@ body{
     display: none;
 }  */
 .alert.success{
-    background-color: #d4edda;
-    color: #155724;
+    background-color: #155724;
+    color: white;
     text-align: center;
 }
 .alert.error{
-    background-color:  #f16a76;
-    color:#721c24;
+    background-color:  red;
+    color:white;
     text-align: center;
     
 }
